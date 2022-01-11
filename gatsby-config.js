@@ -16,5 +16,20 @@ module.exports = {
       },
       __key: "images",
     },
+    "gatsby-source-strapi",
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: ['Frequently Asked Questions'],
+        collectionTypes: [
+          {
+            name: `frequently-asked-questions`,
+            endpoint: `api/frequently-asked-questions`,
+          },
+        ]
+      },
+    },
   ],
 };
